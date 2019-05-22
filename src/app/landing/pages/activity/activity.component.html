@@ -1,3 +1,15 @@
-<p>
-  activity works!
-</p>
+<div class="tab">
+  <div class="title">today</div>
+
+  <div class="tab-event" *ngFor="let item of activityGroup">
+    <div class="ico {{item.className}}">
+      <app-svg-icon name="icon-Icon3x"></app-svg-icon>
+    </div>
+    <p class="text">{{item.text}}</p>
+    <span class="time">{{item.time}}</span>
+    <div class="description" *ngIf="item.description">{{item.description}}</div>
+    <div class="image-group" *ngIf="item.images">
+      <img *ngFor="let data of item.images" src="https://picsum.photos/200" alt="">
+    </div>
+  </div>
+</div>

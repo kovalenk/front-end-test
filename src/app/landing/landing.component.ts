@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-landing',
@@ -7,7 +7,60 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  descriptionGroup = [
+    {
+      number: '372',
+      text: 'Completed Tasks',
+    },
+    {
+      number: '11',
+      text: 'Open Tasks',
+    },
+  ];
+
+
+  navigationGroup = [
+    {
+      active: true,
+      text: 'MENU',
+    },
+    {
+      text: 'Home',
+    },
+    {
+      text: 'My Tasks',
+    },
+    {
+      text: 'Notifications',
+      notifyCount: '3'
+    },
+  ];
+
+  menuGroup = [
+    {
+      text: 'Tasks',
+      link: '/tasks/',
+    },
+    {
+      text: 'Kanban',
+      link: '/kanban/',
+    },
+    {
+      text: 'Activity',
+      link: '/activity/',
+    },
+    {
+      text: 'Calendar',
+      link: '/calendar/',
+    },
+    {
+      text: 'Files',
+      link: '/files/',
+    },
+  ];
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

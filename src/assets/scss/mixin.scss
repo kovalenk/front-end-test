@@ -1,0 +1,44 @@
+@import "variables";
+
+@mixin load_more_ico($color){
+  .load-more {
+    width: 4px;
+    height: 4px;
+
+    position: absolute;
+    top: 38px;
+    right: 30px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 50%;
+    background-color: $color;
+    font-size: 15px;
+    cursor: pointer;
+
+    &:before {
+      width: 4px;
+      height: 4px;
+      content: "";
+
+      position: absolute;
+      left: 6px;
+
+      border-radius: 50%;
+      background-color: $color;
+    }
+
+    &:after {
+      width: 4px;
+      height: 4px;
+      content: "";
+
+      position: absolute;
+      left: -6px;
+
+      border-radius: 50%;
+      background-color: $color;
+    }
+  }
+}

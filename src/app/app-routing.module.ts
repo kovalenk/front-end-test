@@ -1,19 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {ActivityComponent} from './landing/pages/activity/activity.component';
-import {TasksComponent} from './landing/pages/tasks/tasks.component';
-import {KanbanComponent} from './landing/pages/kanban/kanban.component';
-import {CalendarComponent} from './landing/pages/calendar/calendar.component';
-import {FilesComponent} from './landing/pages/files/files.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/activity', pathMatch: 'full' },
-  { path: 'tasks', component: TasksComponent },
-  { path: 'kanban', component: KanbanComponent },
-  { path: 'activity', component: ActivityComponent },
-  { path: 'calendar', component: CalendarComponent },
-  { path: 'files', component: FilesComponent }
+  {path: '', redirectTo: '/activity', pathMatch: 'full'},
+  {path: 'tasks', loadChildren: '../app/landing/pages/tasks/tasks.module#TasksModule'},
+  {path: 'kanban', loadChildren: '../app/landing/pages/kanban/kanban.module#KanbanModule'},
+  {path: 'activity', loadChildren: '../app/landing/pages/activity/activity.module#ActivityModule'},
+  {path: 'calendar', loadChildren: '../app/landing/pages/calendar/calendar.module#CalendarModule'},
+  {path: 'files', loadChildren: '../app/landing/pages/files/files.module#FilesModule'}
 ];
 
 @NgModule({
@@ -24,4 +19,5 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

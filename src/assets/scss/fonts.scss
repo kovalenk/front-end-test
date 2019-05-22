@@ -1,0 +1,9 @@
+// font-face declaration
+
+@font-face {
+  font-family: $Helvetica;
+  src: local('Helvetica'), local('Helvetica'),
+  url('../fonts/helvetica/Helvetica.ttf') format('truetype');
+  font-weight: $font-variant-hairline;
+  font-style: normal;
+}

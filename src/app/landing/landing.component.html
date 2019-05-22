@@ -1,0 +1,65 @@
+<div class="main-body">
+  <div class="profile-container">
+    <div class="logo-container">
+      <app-svg-icon class="icon-logo" name="icon-Logo3x"></app-svg-icon>
+      <span class="title-logo">projectus</span>
+      <app-svg-icon class="icon-search" name="icon-Search3x"></app-svg-icon>
+    </div>
+    <div class="user-info">
+      <img src="https://picsum.photos/200" alt="">
+      <div class="description">
+        <span>Jean Gonzales</span>
+        <span class="place">Product Owner</span>
+        <div class="load-more">
+        </div>
+      </div>
+    </div>
+    <div class="description-info">
+      <div class="item" *ngFor="let item of descriptionGroup">
+        <span>{{item.number}}</span>
+        <span class="text">{{item.text}}</span>
+      </div>
+    </div>
+    <div class="nav-container">
+      <div class="item" *ngFor="let nav of navigationGroup"
+           [class.active]="nav.active">
+        {{nav.text}}
+        <span *ngIf="nav.notifyCount"> {{nav.notifyCount}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <div class="top">
+      <div class="logo-template">
+        <img src="../../assets/images/Shapes@2x.png"/>
+        <span class="logo-title">Website Redesign</span>
+        <div class="circle">
+          <div class="load-more">
+          </div>
+        </div>
+      </div>
+      <div class="control-template">
+        <div class="user" *ngFor="let elem of ' '.repeat(3).split('')"></div>
+
+        <button class="share">Share</button>
+
+        <button class="chat">
+          <app-svg-icon name="icon-Combined-Shape1x"></app-svg-icon>
+          Chat
+        </button>
+      </div>
+      <div class="menu">
+        <div *ngFor="let nav of menuGroup" class="item" routerLink="{{ nav.link }}" routerLinkActive="active">
+          {{nav.text}}
+        </div>
+      </div>
+    </div>
+
+    <div class="info-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+

@@ -6,10 +6,10 @@
       <app-svg-icon class="icon-search" name="icon-Search3x"></app-svg-icon>
     </div>
     <div class="user-info">
-      <img src="https://picsum.photos/200" alt="">
+      <img [src]="userGroup.imageUrl" alt="user-logo">
       <div class="description">
-        <span>Jean Gonzales</span>
-        <span class="place">Product Owner</span>
+        <span>{{userGroup.firstName}} {{userGroup.lastName}} </span>
+        <span class="place">{{userGroup.state}}</span>
         <div class="load-more">
         </div>
       </div>
